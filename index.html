@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BELIEVE</title>
+<title>$BELIEVE</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:black;
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
-/* SOLANA COSMIC BACKGROUND */
+/* SOLANA STYLE BACKGROUND */
 
 body::before{
 content:"";
@@ -26,8 +26,8 @@ width:200%;
 height:200%;
 background:linear-gradient(45deg,#00ffa3,#dc1fff,#9945ff,#00ffa3);
 background-size:400% 400%;
-animation:bg 18s infinite linear;
-opacity:0.25;
+animation:bg 15s linear infinite;
+opacity:0.2;
 z-index:-1;
 }
 
@@ -43,7 +43,7 @@ padding:120px 20px;
 }
 
 h1{
-font-size:80px;
+font-size:90px;
 background:linear-gradient(90deg,#00ffa3,#dc1fff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -52,14 +52,36 @@ animation:pulse 3s infinite;
 
 @keyframes pulse{
 0%{transform:scale(1)}
-50%{transform:scale(1.05)}
+50%{transform:scale(1.06)}
 100%{transform:scale(1)}
 }
 
 .tagline{
-font-size:22px;
-opacity:0.8;
+font-size:24px;
+opacity:0.85;
 margin-top:10px;
+}
+
+/* COIN */
+
+.coin{
+margin:70px auto;
+width:200px;
+height:200px;
+border-radius:50%;
+background:linear-gradient(90deg,#00ffa3,#dc1fff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+font-weight:bold;
+animation:spin 10s linear infinite;
+box-shadow:0 0 50px #dc1fff;
+}
+
+@keyframes spin{
+from{transform:rotateY(0deg)}
+to{transform:rotateY(360deg)}
 }
 
 /* BUTTONS */
@@ -67,8 +89,8 @@ margin-top:10px;
 .btn{
 display:inline-block;
 margin:15px;
-padding:16px 40px;
-border-radius:30px;
+padding:18px 45px;
+border-radius:40px;
 background:linear-gradient(90deg,#00ffa3,#dc1fff);
 color:black;
 font-weight:bold;
@@ -78,42 +100,31 @@ transition:0.3s;
 
 .btn:hover{
 transform:scale(1.1);
-box-shadow:0 0 30px #dc1fff;
-}
-
-/* COIN */
-
-.coin{
-margin:60px auto;
-width:180px;
-height:180px;
-border-radius:50%;
-background:linear-gradient(90deg,#00ffa3,#dc1fff);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-font-weight:bold;
-animation:spin 8s linear infinite;
-}
-
-@keyframes spin{
-from{transform:rotateY(0deg)}
-to{transform:rotateY(360deg)}
+box-shadow:0 0 40px #dc1fff;
 }
 
 /* SECTIONS */
 
 .section{
-padding:80px 20px;
+padding:90px 20px;
 max-width:900px;
 margin:auto;
 }
 
 h2{
-font-size:40px;
-margin-bottom:30px;
+font-size:42px;
+margin-bottom:35px;
 }
+
+/* DESCRIPTION */
+
+.desc{
+font-size:20px;
+line-height:1.7;
+opacity:0.9;
+}
+
+/* TOKENOMICS */
 
 .tokenomics div{
 margin:10px;
@@ -129,15 +140,7 @@ border:1px solid rgba(255,255,255,0.2);
 border-radius:15px;
 }
 
-/* GRAPH PLACE */
-
-.chart{
-margin-top:30px;
-padding:40px;
-border:1px solid rgba(255,255,255,0.2);
-border-radius:20px;
-opacity:0.6;
-}
+/* FOOTER */
 
 footer{
 padding:40px;
@@ -160,16 +163,51 @@ The meme coin powered by belief 🚀
 <div class="coin">$BELIEVE</div>
 
 <a class="btn" href="https://t.me/believe_soll" target="_blank">
-Telegram
+Join Telegram
 </a>
 
 <a class="btn" href="https://x.com/believe_solrx?s=21" target="_blank">
-X / Twitter
+Follow on X
 </a>
 
 <a class="btn" href="#">
-BUY BELIEVE
+BUY $BELIEVE
 </a>
+
+</div>
+
+<div class="section">
+
+<h2>ABOUT $BELIEVE</h2>
+
+<p class="desc">
+
+$BELIEVE is not just another meme coin on 
+<strong>Solana</strong>.  
+
+It’s a movement powered by community, energy and one simple idea:  
+
+<strong>belief creates legends.</strong>
+
+Every crypto cycle creates a meme coin that shocks the market and
+goes from a tiny project to a massive phenomenon.
+
+The people who win are always the same ones.
+
+<strong>The early believers.</strong>
+
+$BELIEVE is built for those who understand that the biggest gains in crypto
+come from conviction.
+
+Believe in crypto.  
+Believe in the future.  
+Believe in yourself.
+
+And most importantly…
+
+<strong>BELIEVE before the world does.</strong>
+
+</p>
 
 </div>
 
@@ -178,20 +216,12 @@ BUY BELIEVE
 <h2>TOKENOMICS</h2>
 
 <div class="tokenomics">
+
 <div>Supply: 1,000,000,000</div>
 <div>Tax: 0%</div>
-<div>Liquidity: Burned</div>
 <div>Chain: Solana</div>
-</div>
+<div>Liquidity: Locked</div>
 
-</div>
-
-<div class="section">
-
-<h2>LIVE CHART</h2>
-
-<div class="chart">
-Chart coming soon 📈
 </div>
 
 </div>
@@ -205,19 +235,19 @@ Chart coming soon 📈
 <div>
 🚀 Phase 1  
 Launch $BELIEVE  
-Build community
+Build strong community
 </div>
 
 <div>
-📈 Phase 2  
-Coin listings  
-Viral marketing
+🔥 Phase 2  
+Viral marketing  
+Memes take over X
 </div>
 
 <div>
 🌕 Phase 3  
-Major exchanges  
-To the moon
+Major listings  
+Global meme movement
 </div>
 
 </div>
