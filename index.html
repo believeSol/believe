@@ -8,67 +8,42 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
 body{
+margin:0;
+font-family:Arial;
 background:black;
 color:white;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
 text-align:center;
+overflow-x:hidden;
 }
 
-/* SOLANA GRADIENT */
+/* SOLANA COSMIC BACKGROUND */
 
-body:before{
+body::before{
 content:"";
 position:fixed;
 width:200%;
 height:200%;
-background:linear-gradient(
-45deg,
-#00ffa3,
-#dc1fff,
-#9945ff,
-#00ffa3
-);
+background:linear-gradient(45deg,#00ffa3,#dc1fff,#9945ff,#00ffa3);
 background-size:400% 400%;
-animation:bg 12s infinite linear;
+animation:bg 18s infinite linear;
 opacity:0.25;
 z-index:-1;
 }
 
 @keyframes bg{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+0%{background-position:0%}
+100%{background-position:400%}
 }
 
-/* CONTAINER */
+/* HERO */
 
-.container{
-max-width:900px;
-animation:fade 2s ease;
+.hero{
+padding:120px 20px;
 }
-
-@keyframes fade{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1;}
-}
-
-/* TITLE */
 
 h1{
-font-size:70px;
-letter-spacing:6px;
+font-size:80px;
 background:linear-gradient(90deg,#00ffa3,#dc1fff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -82,47 +57,91 @@ animation:pulse 3s infinite;
 }
 
 .tagline{
-font-size:20px;
-margin-top:15px;
+font-size:22px;
 opacity:0.8;
+margin-top:10px;
 }
 
 /* BUTTONS */
 
-.buttons{
-margin-top:40px;
-}
-
 .btn{
 display:inline-block;
-margin:10px;
-padding:15px 35px;
+margin:15px;
+padding:16px 40px;
 border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-transition:0.3s;
 background:linear-gradient(90deg,#00ffa3,#dc1fff);
 color:black;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
 }
 
 .btn:hover{
 transform:scale(1.1);
-box-shadow:0 0 25px #dc1fff;
+box-shadow:0 0 30px #dc1fff;
 }
 
-/* FLOATING TEXT */
+/* COIN */
 
-.floating{
-position:absolute;
-font-size:14px;
-opacity:0.25;
-animation:float 15s linear infinite;
+.coin{
+margin:60px auto;
+width:180px;
+height:180px;
+border-radius:50%;
+background:linear-gradient(90deg,#00ffa3,#dc1fff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:bold;
+animation:spin 8s linear infinite;
 }
 
-@keyframes float{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-100vh);}
+@keyframes spin{
+from{transform:rotateY(0deg)}
+to{transform:rotateY(360deg)}
+}
+
+/* SECTIONS */
+
+.section{
+padding:80px 20px;
+max-width:900px;
+margin:auto;
+}
+
+h2{
+font-size:40px;
+margin-bottom:30px;
+}
+
+.tokenomics div{
+margin:10px;
+font-size:20px;
+}
+
+/* ROADMAP */
+
+.roadmap div{
+margin:20px;
+padding:20px;
+border:1px solid rgba(255,255,255,0.2);
+border-radius:15px;
+}
+
+/* GRAPH PLACE */
+
+.chart{
+margin-top:30px;
+padding:40px;
+border:1px solid rgba(255,255,255,0.2);
+border-radius:20px;
+opacity:0.6;
+}
+
+footer{
+padding:40px;
+opacity:0.5;
 }
 
 </style>
@@ -130,7 +149,7 @@ animation:float 15s linear infinite;
 
 <body>
 
-<div class="container">
+<div class="hero">
 
 <h1>$BELIEVE</h1>
 
@@ -138,43 +157,78 @@ animation:float 15s linear infinite;
 The meme coin powered by belief 🚀
 </p>
 
-<div class="buttons">
+<div class="coin">$BELIEVE</div>
 
 <a class="btn" href="https://t.me/believe_soll" target="_blank">
 Telegram
 </a>
 
 <a class="btn" href="https://x.com/believe_solrx?s=21" target="_blank">
-X (Twitter)
+X / Twitter
+</a>
+
+<a class="btn" href="#">
+BUY BELIEVE
 </a>
 
 </div>
 
+<div class="section">
+
+<h2>TOKENOMICS</h2>
+
+<div class="tokenomics">
+<div>Supply: 1,000,000,000</div>
+<div>Tax: 0%</div>
+<div>Liquidity: Burned</div>
+<div>Chain: Solana</div>
 </div>
 
-<script>
+</div>
 
-/* FLOATING MEME TEXT */
+<div class="section">
 
-const words=["BELIEVE","SOLANA","MEME","TO THE MOON","CRYPTO","$BELIEVE"];
+<h2>LIVE CHART</h2>
 
-for(let i=0;i<20;i++){
+<div class="chart">
+Chart coming soon 📈
+</div>
 
-let span=document.createElement("div");
+</div>
 
-span.className="floating";
+<div class="section">
 
-span.innerText=words[Math.floor(Math.random()*words.length)];
+<h2>ROADMAP</h2>
 
-span.style.left=Math.random()*100+"%";
+<div class="roadmap">
 
-span.style.animationDuration=10+Math.random()*20+"s";
+<div>
+🚀 Phase 1  
+Launch $BELIEVE  
+Build community
+</div>
 
-document.body.appendChild(span);
+<div>
+📈 Phase 2  
+Coin listings  
+Viral marketing
+</div>
 
-}
+<div>
+🌕 Phase 3  
+Major exchanges  
+To the moon
+</div>
 
-</script>
+</div>
+
+</div>
+
+<footer>
+
+BELIEVE • Meme Coin on Solana
+
+</footer>
 
 </body>
 </html>
