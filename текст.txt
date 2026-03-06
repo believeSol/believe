@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BELIEVE</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+.container{
+text-align:center;
+max-width:900px;
+}
+
+h1{
+font-size:90px;
+letter-spacing:6px;
+text-shadow:
+0 0 20px #00ffff,
+0 0 40px #00ffff,
+0 0 80px #00ffff;
+margin-bottom:20px;
+}
+
+h2{
+font-size:40px;
+color:#00ffff;
+margin-bottom:30px;
+}
+
+p{
+font-size:20px;
+color:#ccc;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 40px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.buy{
+background:#00ffff;
+color:black;
+}
+
+.buy:hover{
+box-shadow:0 0 20px #00ffff;
+transform:scale(1.1);
+}
+
+.social{
+border:2px solid #00ffff;
+color:#00ffff;
+}
+
+.social:hover{
+background:#00ffff;
+color:black;
+transform:scale(1.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="container">
+
+<h1>BELIEVE</h1>
+
+<h2>$BELIEVE</h2>
+
+<p>
+The memecoin powered by belief.<br>
+Believe early. Believe big.
+</p>
+
+<div class="buttons">
+
+<a class="btn buy" href="#">BUY NOW</a>
+
+<a class="btn social" href="#">TELEGRAM</a>
+
+<a class="btn social" href="#">X</a>
+
+</div>
+
+</div>
+
+<script>
+
+const canvas = document.getElementById("particles")
+const ctx = canvas.getContext("2d")
+
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+
+let particles = []
+
+for(let i=0;i<100;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speedX:(Math.random()-0.5)*0.5,
+speedY:(Math.random()-0.5)*0.5
+})
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+p.x+=p.speedX
+p.y+=p.speedY
+
+if(p.x<0||p.x>canvas.width)p.speedX*=-1
+if(p.y<0||p.y>canvas.height)p.speedY*=-1
+
+ctx.beginPath()
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2)
+ctx.fillStyle="#00ffff"
+ctx.fill()
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+</script>
+
+</body>
+</html>
