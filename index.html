@@ -1,12 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Believe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BELIEVE</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:black;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+/* SOLANA GRADIENT */
+
+body:before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:linear-gradient(
+45deg,
+#00ffa3,
+#dc1fff,
+#9945ff,
+#00ffa3
+);
+background-size:400% 400%;
+animation:bg 12s infinite linear;
+opacity:0.25;
+z-index:-1;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* CONTAINER */
+
+.container{
+max-width:900px;
+animation:fade 2s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1;}
+}
+
+/* TITLE */
+
+h1{
+font-size:70px;
+letter-spacing:6px;
+background:linear-gradient(90deg,#00ffa3,#dc1fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+
+.tagline{
+font-size:20px;
+margin-top:15px;
+opacity:0.8;
+}
+
+/* BUTTONS */
+
+.buttons{
+margin-top:40px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+transition:0.3s;
+background:linear-gradient(90deg,#00ffa3,#dc1fff);
+color:black;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px #dc1fff;
+}
+
+/* FLOATING TEXT */
+
+.floating{
+position:absolute;
+font-size:14px;
+opacity:0.25;
+animation:float 15s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-100vh);}
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>Believe</h1>
-<p>My first website</p>
+<div class="container">
+
+<h1>$BELIEVE</h1>
+
+<p class="tagline">
+The meme coin powered by belief 🚀
+</p>
+
+<div class="buttons">
+
+<a class="btn" href="https://t.me/believe_soll" target="_blank">
+Telegram
+</a>
+
+<a class="btn" href="https://x.com/believe_solrx?s=21" target="_blank">
+X (Twitter)
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* FLOATING MEME TEXT */
+
+const words=["BELIEVE","SOLANA","MEME","TO THE MOON","CRYPTO","$BELIEVE"];
+
+for(let i=0;i<20;i++){
+
+let span=document.createElement("div");
+
+span.className="floating";
+
+span.innerText=words[Math.floor(Math.random()*words.length)];
+
+span.style.left=Math.random()*100+"%";
+
+span.style.animationDuration=10+Math.random()*20+"s";
+
+document.body.appendChild(span);
+
+}
+
+</script>
 
 </body>
 </html>
